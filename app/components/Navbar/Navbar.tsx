@@ -26,46 +26,44 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = React.useState(false);
 
     return (
-        <Disclosure as="nav" className="navbar">
-            <>
-                    <div className="relative flex h-12 m-4 justify-between sm:h-20 items-center">
+        <>
+            <div className="fixed p-4 bg-[#03050d] top-0 w-full border-b border-b-lightblue/30 flex justify-between sm:h-20 items-center">
 
-                        <div className="flex flex-shrink-0 items-center">
-                            <span className="block text-2xl text-white h-10 w-20px lg:hidden">
-                                Chat
-                            </span>
-                            <span className="hidden text-4xl text-white h-48px w-48px lg:block">
-                                Chat
-                            </span>
-                        </div>
-                        
-                        <div className="hidden md:block mx-auto justify-end space-x-4">
-                            {navigation.map((item) => (
-                                <Link
-                                    key={item.name}
-                                    href={item.href}
-                                    className={classNames(
-                                        item.current ? 'bg-gray-900' : 'navlinks text-white hover:text-offwhite hover-underline',
-                                        'px-3 py-4 rounded-md text-lg font-normal'
-                                    )}
-                                    aria-current={item.href ? 'page' : undefined}
-                                >
-                                    {item.name}
-                                </Link>
-                            ))}
-                        </div>
+                <div className="flex items-center">
+                    <span className="block text-2xl text-white h-10 w-20px lg:hidden">
+                        Chat
+                    </span>
+                    <span className="hidden text-4xl text-white h-48px w-48px lg:block">
+                        Chat
+                    </span>
+                </div>
+                
+                <div className="hidden md:block mx-auto justify-end space-x-4">
+                    {navigation.map((item) => (
+                        <Link
+                            key={item.name}
+                            href={item.href}
+                            className={classNames(
+                                item.current ? 'bg-gray-900' : 'navlinks text-white hover:text-offwhite hover-underline',
+                                'px-3 py-4 rounded-md text-lg font-normal'
+                            )}
+                            aria-current={item.href ? 'page' : undefined}
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
+                </div>
 
-                        <div className='block lg:hidden'>
-                            <Bars3Icon className="block h-6 w-6 text-white" aria-hidden="true" onClick={() => setIsOpen(true)} />
-                        </div>
+                <div className='block lg:hidden'>
+                    <Bars3Icon className="block h-6 w-6 text-white" aria-hidden="true" onClick={() => setIsOpen(true)} />
+                </div>
 
-                        <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-                            <Drawerdata />
-                        </Drawer>
+                <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
+                    <Drawerdata />
+                </Drawer>
 
-                    </div>
-            </>
-        </Disclosure>
+            </div>
+        </>
     )
 }
 
