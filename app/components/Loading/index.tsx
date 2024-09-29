@@ -1,4 +1,4 @@
-
+'use client';
 import { Icon } from '@iconify/react';
 
 const Loading = () => {
@@ -7,8 +7,7 @@ const Loading = () => {
             <Icon icon="line-md:coffee-half-empty-twotone-loop" className='w-96 h-96 text-white ' />
         </div>
     );
-}
+};
 
 
-  export default Loading;
-  
+export default Loading;

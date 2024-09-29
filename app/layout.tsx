@@ -2,12 +2,10 @@ import './globals.css';
 import '@/node_modules/react-modal-video/scss/modal-video.scss';
 import Navbar from './components/Navbar/index';
 import Footer from './components/Footer/index';
-import Loading from './components/Loading/index';
-
 
 export const metadata = {
   title: 'Chat',
-}
+};
 export default function RootLayout({
   children,
 }: {
@@ -17,12 +15,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        <Loading/>
         <div className='h-full'>
-         {children}
+          {children}
         </div>
         <Footer />
       </body>
     </html>
-  )
+  );
 }

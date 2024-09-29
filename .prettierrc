@@ -1,0 +1,6 @@
+{
+  "semi": true,             // Define ponto e vírgula no final de cada linha
+  "singleQuote": true,      // Usa aspas simples
+  "printWidth": 80,         // Limita o comprimento de uma linha
+  "trailingComma": "es5"    // Adiciona vírgula no final de objetos e arrays
+}

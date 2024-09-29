@@ -2,8 +2,8 @@ import { Disclosure } from '@headlessui/react';
 import Link from 'next/link';
 import React from 'react';
 import { Bars3Icon } from '@heroicons/react/24/outline';
-import Drawer from "./Drawer";
-import Drawerdata from "./Drawerdata";
+import Drawer from './Drawer';
+import Drawerdata from './Drawerdata';
 // import Contactusform from './Contactus';
 
 interface NavigationItem {
@@ -15,10 +15,10 @@ interface NavigationItem {
 const navigation: NavigationItem[] = [
     { name: 'Início', href: '/', current: false },
     { name: 'Administrativo', href: '/admin', current: false },
-]
+];
 
 function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
+    return classes.filter(Boolean).join(' ');
 }
 
 const Navbar = () => {
@@ -64,7 +64,7 @@ const Navbar = () => {
 
             </div>
         </>
-    )
-}
+    );
+};
 
 export default Navbar;

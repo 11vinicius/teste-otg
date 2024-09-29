@@ -1,5 +1,5 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react';
+import Link from 'next/link';
 
 interface NavigationItem {
     name: string;
@@ -12,10 +12,10 @@ const navigation: NavigationItem[] = [
     { name: 'Exchange', href: '#exchange-section', current: false },
     { name: 'Features', href: '#features-section', current: false },
     { name: 'FAQ', href: '#faq-section', current: false },
-]
+];
 
 function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ')
+    return classes.filter(Boolean).join(' ');
 }
 
 const Data = () => {
@@ -46,6 +46,6 @@ const Data = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Data;
