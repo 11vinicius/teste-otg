@@ -24,7 +24,7 @@ export default function Show({ params }: { params: { id: string } }) {
     <main>
       <div className="p-8 h-screen w-full flex items-center">
         <div className="flex flex-col w-12/12 md:w-6/12 mx-auto my-a">
-          <h1 className='text-white text-xl text-center md:text-4xl border-b border-b-w font-bold'>
+          <h1 className='text-white text-xl text-center md:text-4xl border-b border-b-white font-bold'>
             {post?.title}
           </h1>
           <p className='text-white text-center my-8'>

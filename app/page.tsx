@@ -8,20 +8,35 @@ import api from './shared/baseService';
 export default function Home() {
 
   const [posts, setPosts] = useState<Post[]>([]);
+  const [page, setpage] = useState<number>(1);
+  const [hasMore, setHasMore] = useState(true);
+
 
   useEffect(() => {
     const get = async () => {
       const res = await api.get(`/posts?_page=${1}&_limit=${10}`);
-      const data = res.data;
-      setPosts(data);
+      setPosts((prev) => [...prev, ...res.data]);
     };
 
     get();
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2 && hasMore) {
+        setpage((prevPage) => prevPage + 1);
+
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [hasMore]);
+
   return (
     <main>
-      <div className="m-14 min-h-screen grid grid-cols-1 md:grid-cols-3 gap-4 my-24">
+      <div className='mx-16 my-4 text-white font-semibold text-xl md:text-6xl'>Posts</div>
+      <div className="mx-14 min-h-screen grid grid-cols-1 md:grid-cols-3 gap-4 ">
         {posts.map((item, index) => (
           <Card key={index} post={item} />
         ))}
