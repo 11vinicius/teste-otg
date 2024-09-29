@@ -8,10 +8,8 @@ interface NavigationItem {
 }
 
 const navigation: NavigationItem[] = [
-    { name: 'Home', href: '#home-section', current: false },
-    { name: 'Exchange', href: '#exchange-section', current: false },
-    { name: 'Features', href: '#features-section', current: false },
-    { name: 'FAQ', href: '#faq-section', current: false },
+    { name: 'Início', href: '/', current: false },
+    { name: 'Administrativo', href: '/admin', current: false },
 ];
 
 function classNames(...classes: string[]) {
@@ -29,7 +27,7 @@ const Data = () => {
                                 key={item.name}
                                 href={item.href}
                                 className={classNames(
-                                    item.current ? 'bg-gray-900 text-purple' : 'text-black hover:bg-gray-700 hover:text-purple',
+                                    item.current ? '' : 'text-white ',
                                     'block  py-2 rounded-md text-base font-medium'
                                 )}
                                 aria-current={item.current ? 'page' : undefined}
@@ -38,9 +36,6 @@ const Data = () => {
                             </Link>
                         ))}
                         <div className="mt-4"></div>
-                        <button className="bg-navyblue w-full hover:text-white text-white border border-purple font-medium py-2 px-4 rounded">
-                            Connect Wallet
-                        </button>
                     </div>
                 </div>
             </div>
