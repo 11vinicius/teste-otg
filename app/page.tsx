@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Post } from './posts.model';
 import api from './shared/baseService';
-import Card from './components/123';
+import Card from './components/Card';
 
 export default function Home() {
 
