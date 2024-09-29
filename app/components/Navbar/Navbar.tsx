@@ -27,7 +27,7 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="fixed p-4 bg-[#03050d] top-0 w-full border-b border-b-lightblue/30 flex justify-between sm:h-20 items-center">
+            <div className="p-4 bg-[#03050d] top-0 w-full border-b border-b-lightblue/30 flex justify-between sm:h-20 items-center">
 
                 <div className="flex items-center">
                     <span className="block text-2xl text-white h-10 w-20px lg:hidden">
