@@ -1,9 +1,8 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { Post } from './posts.model';
-import Card from './components/Card';
 import api from './shared/baseService';
-
+import Card from './components/Card';
 
 export default function Home() {
 
