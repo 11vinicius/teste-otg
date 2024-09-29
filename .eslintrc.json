@@ -10,6 +10,7 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "off",
     "no-undef": "off",
+    "no-unused-vars": "off",
     "semi": [
       "error",
       "always"

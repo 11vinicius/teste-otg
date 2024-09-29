@@ -8,8 +8,6 @@ import api from './shared/baseService';
 export default function Home() {
 
   const [posts, setPosts] = useState<Post[]>([]);
-  const [page, setpage] = useState<number>(1);
-  const [hasMore, setHasMore] = useState(true);
 
 
   useEffect(() => {
@@ -21,17 +19,7 @@ export default function Home() {
     get();
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2 && hasMore) {
-        setpage((prevPage) => prevPage + 1);
 
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [hasMore]);
 
   return (
     <main>
