@@ -13,11 +13,10 @@ export default function Show({ params }: { params: { id: string } }) {
 
   useEffect(() => {
     const get = async () => {
-      const res = await api.get(`/posts/${params.id}`);
-      const data = res.data;
+      const resPost = await api.get(`/posts/${params.id}`);
+      const data = resPost.data;
       setPost(data);
     };
-
     get();
   }, []);
 
@@ -30,15 +29,14 @@ export default function Show({ params }: { params: { id: string } }) {
           </h1>
           <p className='text-white my-1'>
             <span className='md:font-semibold md:text-xl'>Autor: </span>
-            <span>{post?.author}</span>
+            <span>Vinicius</span>
           </p>
           <p className='text-white my-1'>
             <span className='md:font-semibold md:text-xl'>Data de Criação: </span>
-            <span>{moment(post?.created_at).format('DD/MM/YYYY')}</span>
+            <span>{moment(Date.now()).format('DD/MM/YYYY')}</span>
           </p>
           <p className='text-white my-1'>
-            {post?.content}
-            {post?.summary}
+            {post?.body}
           </p>
 
           <Link href="/" className="bg-bluish/20 flex my-8 items-center hover:bg-bluish/40 w-6/12 text-white m-auto p-4 rounded-xl">
