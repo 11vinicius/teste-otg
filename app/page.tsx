@@ -35,8 +35,8 @@ export default function Home() {
 
   return (
     <main>
-      <div className='mx-16 my-4 text-white font-semibold text-xl md:text-6xl'>Posts</div>
-      <div className="mx-14 min-h-screen grid grid-cols-1 md:grid-cols-3 gap-4 ">
+      <div className='mx-16 my-8 text-white font-semibold text-xl md:text-6xl'>Posts</div>
+      <div className="mx-14 mb-14 min-h-screen grid grid-cols-1 md:grid-cols-3  gap-4 ">
         {posts.map((item, index) => (
           <Card key={index} post={item} />
         ))}
